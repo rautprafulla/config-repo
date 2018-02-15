@@ -5,19 +5,22 @@ spring:
     show-sql: "true"
     properties:
       hibernate:
-        dialect: "org.hibernate.dialect.MySQL5Dialect" 
+        dialect: "org.hibernate.dialect.DerbyDialect"
   database:
-    driverClassName: "com.mysql.jdbc.Driver"
+    driverClassName: "org.apache.derby.jdbc.ClientDriver"
   datasource:
-    url: "jdbc:mysql://localhost:3306/itemsharingdatabase"
+    url: "jdbc:derby://localhost:1527/itemsharingdatabase"
     username: "root"
-    password: "root"
-    testWhileIdle : "true"
-    validation-query: "SELECT 1"
-      
+    password: "{cipher}"
+    testWhileIdle: "true"
+    validationQuery: "SELECT 1"
+    
 security:
   basic:
-    enabled: false    
+    enabled: false
     
 server:
-  port: 8082    
+  port: 8082
+ 
+
+ 
